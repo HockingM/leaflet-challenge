@@ -23,19 +23,19 @@ function createFeatures(earthquakeData) {
     // Conditionals for earthquake points
     var fillColour = "";
 
-    if (circleSize > 5) {
+    if (circleSize >= 5) {
       fillColour = "#FF3333";
     }
-    else if (circleSize > 4) {
+    else if (circleSize >= 4) {
       fillColour = "#FF6633";
     }
-    else if (circleSize > 3) {
+    else if (circleSize >= 3) {
       fillColour = "#FF9933";
     }
-    else if (circleSize > 2) {
+    else if (circleSize >= 2) {
       fillColour = "#FFCC33";
     }
-    else if (circleSize > 1) {
+    else if (circleSize >= 1) {
       fillColour = "#FFFF33";
     }
     else {
@@ -46,23 +46,48 @@ function createFeatures(earthquakeData) {
       L.circle([lat, lng], {
         stroke: false,
         fillOpacity: 0.75,
-        color: "#000000",
+        color: "black",
         fillColor: fillColour,
         radius: (circleSize * 30000)
       }).bindPopup("<h3>" + earthquakeData[i].properties.place +
         "</h3><hr><p>" + new Date(earthquakeData[i].properties.time) + "</p>")
     );
   }
-  console.log(circleMarkers);
 
-  // send our earthquakes layer to the createMap function
-  createMap(circleMarkers);
+  // create legend
+  var legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function (myMap) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+      scales = [0, 1, 2, 3, 4, 5];
+
+    for (var i = 0; i < scales.length; i++) {
+
+      div.innerHTML +=
+        '<i style="background:' + getColor(scales[i] + 1) + '"></i> ' +
+        scales[i] + (scales[i + 1] ? '&ndash;' + scales[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+  };
+
+  // send earthquakes array to the createMap function
+  createMap(circleMarkers, legend);
 }
 
-function createMap(circleMarkers) {
+function getColor(d) {
+  return d >= 5 ? '#FF3333' :
+    d >= 4 ? '#FF6633' :
+      d >= 3 ? '#FF9933' :
+        d >= 2 ? '#FFCC33' :
+          d >= 1 ? '#FFFF33' :
+            '#66FF33';
+}
 
+function createMap(circleMarkers, legend) {
+
+  // create earthquakes layer
   var circles = L.layerGroup(circleMarkers);
-  console.log(circles);
 
   // create map with base layer and earthquakes layers to display on load
   var myMap = L.map("map", {
@@ -83,5 +108,6 @@ function createMap(circleMarkers) {
   }).addTo(myMap);
 
   circles.addTo(myMap);
+  legend.addTo(myMap);
 
 }
