@@ -8,7 +8,7 @@ d3.json(queryUrl, function (data) {
 });
 
 function createFeatures(earthquakeData) {
-console.log(earthquakeData);
+
   // Define array to hold created circle markers
   var circleMarkers = [];
 
@@ -49,7 +49,8 @@ console.log(earthquakeData);
         color: "#000000",
         fillColor: fillColour,
         radius: (circleSize * 30000)
-      })
+      }).bindPopup("<h3>" + earthquakeData[i].properties.place +
+        "</h3><hr><p>" + new Date(earthquakeData[i].properties.time) + "</p>")
     );
   }
   console.log(circleMarkers);
@@ -65,11 +66,11 @@ function createMap(circleMarkers) {
 
   // create map with base layer and earthquakes layers to display on load
   var myMap = L.map("map", {
-      center: [
-        40.7607800, -111.8910500
-      ],
-      zoom: 5
-    });
+    center: [
+      40.7607800, -111.8910500
+    ],
+    zoom: 5
+  });
 
   // define map base layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
