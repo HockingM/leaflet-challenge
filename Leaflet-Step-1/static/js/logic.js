@@ -57,7 +57,7 @@ function createFeatures(earthquakeData) {
 
   // create legend
   var legend = L.control({ position: 'bottomright' });
-  legend.onAdd = function (myMap) {
+  legend.onAdd = function () {
 
     var div = L.DomUtil.create('div', 'info legend'),
       scales = [0, 1, 2, 3, 4, 5];
