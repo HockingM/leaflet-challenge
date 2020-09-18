@@ -15,7 +15,7 @@ function createFeatures(earthquakeData) {
   // Loop through locations and create city and state markers
   for (var i = 0; i < earthquakeData.length; i++) {
 
-    // Setting the marker radius for the state by passing population into the markerSize function
+    // Setting the marker radius for the state by passing earthquake into the markerSize function
     var lng = earthquakeData[i].geometry.coordinates[0];
     var lat = earthquakeData[i].geometry.coordinates[1];
     var circleSize = earthquakeData[i].properties.mag
@@ -44,10 +44,11 @@ function createFeatures(earthquakeData) {
 
     circleMarkers.push(
       L.circle([lat, lng], {
-        stroke: false,
+        stroke: true,
         fillOpacity: 0.75,
         color: "black",
-        fillColor: fillColour,
+        weight: 0.5,
+        fillColor: getColor(circleSize),
         radius: (circleSize * 30000)
       }).bindPopup("<h3>" + earthquakeData[i].properties.place +
         "</h3><hr><p>" + new Date(earthquakeData[i].properties.time) + "</p>")
@@ -64,7 +65,7 @@ function createFeatures(earthquakeData) {
     for (var i = 0; i < scales.length; i++) {
 
       div.innerHTML +=
-        '<i style="background:' + getColor(scales[i] + 1) + '"></i> ' +
+        '<i class = "legend" + style = "background:' + getColor(scales[i]) + '"></i> ' +
         scales[i] + (scales[i + 1] ? '&ndash;' + scales[i + 1] + '<br>' : '+');
     }
 
