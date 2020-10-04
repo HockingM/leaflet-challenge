@@ -1,7 +1,7 @@
 # Leaflet 
 Wk17 Visualising Data with Leaflet - Monash Data Analysis Bootcamp
 
-<iframe src="https://giphy.com/embed/xsmLm9AA6lQaSBFFxA" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/xsmLm9AA6lQaSBFFxA">via GIPHY</a></p>
+![image](/images/Animated GIF-downsized_large.gif)
 
 ## About the Project
 This project was completed in 2 parts, using Leaflet to create visualisations of real-time earthquake data from the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page.  The page states it updates every minute.  
