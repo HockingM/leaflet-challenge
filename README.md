@@ -1,7 +1,7 @@
 # Leaflet 
 Wk17 Visualising Data with Leaflet - Monash Data Analysis Bootcamp
 
-![image](/images/leaflet.mp4)
+<iframe src="https://giphy.com/embed/xsmLm9AA6lQaSBFFxA" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/xsmLm9AA6lQaSBFFxA">via GIPHY</a></p>
 
 ## About the Project
 This project was completed in 2 parts, using Leaflet to create visualisations of real-time earthquake data from the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page.  The page states it updates every minute.  
@@ -21,7 +21,7 @@ Note: testing was done using `python -m http.server`to run the visualizations. T
 ### Step-1
 1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at [./Leaflet-Step-1/static/js/config.js](./Leaflet-Step-1/static/js/config.js)
+2. Enter your API Key in 'config.js' at [/Leaflet-Step-1/static/js/config.js](./Leaflet-Step-1/static/js/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
@@ -29,7 +29,7 @@ const API_KEY = 'ENTER YOUR API';
 ### Step-2
 1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at [./Leaflet-Step-2/static/js/config.js](./Leaflet-Step-2/static/js/config.js)
+2. Enter your API Key in 'config.js' at [/Leaflet-Step-2/static/js/config.js](./Leaflet-Step-2/static/js/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
