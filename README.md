@@ -21,7 +21,7 @@ Note: testing was done using `python -m http.server`to run the visualizations. T
 ### Step-1
 1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at [/Leaflet-Step-1/static/js/config.js](./Leaflet-Step-1/static/js/config.js)
+2. Enter your API Key in 'config.js' at [/Leaflet-Step-1/static/js/config/config.js](./Leaflet-Step-1/static/js/config/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
@@ -29,7 +29,7 @@ const API_KEY = 'ENTER YOUR API';
 ### Step-2
 1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at [/Leaflet-Step-2/static/js/config.js](./Leaflet-Step-2/static/js/config.js)
+2. Enter your API Key in 'config.js' at [/Leaflet-Step-2/static/js/config/config.js](./Leaflet-Step-2/static/js/config/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
