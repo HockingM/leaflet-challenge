@@ -5,29 +5,30 @@ Wk17 Visualising Data with Leaflet - Monash Data Analysis Bootcamp
 ## About the Project
 This project was completed in 2 parts, using Leaflet to create visualisations of real-time earthquake data from the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page.  The page states it updates every minute.  
 
-Using the URL, a JSON representation is pulled back for the selected dataset (_All Earthquakes_ from the _Past 7 days_ feed).  The latitude and longitude of each recorded event are used to plot circle markers that reflect the magnitude of each earthquake both in size and colour.  Circles appear larger and darker in colour the higher the earthquake's magitude.  Pop-ups have been added to each circle and provide additional information about the earthquake when any circle is clicked.  A legend has also been added to the map for context.
+Using the URL, a JSON representation is pulled back for the selected dataset (_**All Earthquakes**_ from the _**Past 7 days**_ feed).  The latitude and longitude of each recorded event are used to plot circle markers that reflect the magnitude of each earthquake both in size and colour.  Circles appear larger and darker in colour the higher the earthquake's magitude.  Pop-ups have been added to each circle and provide additional information about the earthquake when any circle is clicked.  A legend has also been added to the map for context.
 
-In the Step-1 solution, a single base layer is created, with zoom in and out functionality.  For Step-2, a number of base maps have been added to the original base map, in a control layer that allows the user to toggle between different map selections by clicking each option.  Additional data has also been included to show the relationship between tectonic plates (fault lines) and earthquakes.  The data for the tectonic plates has been pulled from <https://github.com/fraxen/tectonicplates> and added as an additional layer. Both the earthquakes and the fault lines have been created as overlays which can be selected individually, together or both 'switched off' when each option is clicked in the control box.
+###Solutions
+In the Step-1 solution, a single base layer is created, with zoom in and out functionality.  
+
+For Step-2, a number of base maps have been added to the original base map, in a control layer that allows the user to toggle between different map selections by clicking each option.  Additional data has also been included to show the relationship between tectonic plates (fault lines) and earthquakes.  The data for the tectonic plates has been pulled from <https://github.com/fraxen/tectonicplates>. Both the earthquakes and the fault lines data have been created as individual overlays, each of which can be clicked 'on' or 'off', showing individually or both together.
 
 Note: testing was done using `python -m http.server`to run the visualizations. This hosted the page at `localhost:8000` in my local web browser.
 
 
 ## Usage
 
-###Step-1###
-1. Review requires a mapbox API Key.  Get a free mapbox API Key at: 
-  ![image](html_screenshot2.png)
+###Step-1
+1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at (./Leaflet-Step-1/static/js/config.js)
+2. Enter your API Key in 'config.js' at [./Leaflet-Step-1/static/js/config.js](./Leaflet-Step-1/static/js/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
 
-###Step-2###
-1. Review requires a mapbox API Key.  Get a free mapbox API Key at: 
-  ![image](html_screenshot2.png)
+###Step-2
+1. Review requires a mapbox API Key.  Get a free mapbox API Key at: [Mapbox Getting Started](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/)
   
-2. Enter your API Key in 'config.js' at (./Leaflet-Step-2/static/js/config.js)
+2. Enter your API Key in 'config.js' at [./Leaflet-Step-2/static/js/config.js](./Leaflet-Step-2/static/js/config.js)
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
@@ -42,7 +43,7 @@ const API_KEY = 'ENTER YOUR API';
 
 
 ## Acknowledgements
-* 
+* World tectonic plates and boundaries Retrieved from: [https://github.com/fraxen/tectonicplates](https://github.com/fraxen/tectonicplates)
 
 
 
